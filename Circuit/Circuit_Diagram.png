@@ -1,0 +1,25 @@
+🔌 Circuit Diagram Description
+
+ The circuit consists of an ESP32 development board, a single-channel relay module, a DC fan, and a 9V power supply.
+
+🔹 ESP32 to Relay Connections
+-ESP32 GPIO 23 → Relay IN
+-ESP32 GND → Relay GND
+-ESP32 VIN / 5V → Relay VCC
+
+🔹 Relay to Fan Connections
+-Relay COM → Positive terminal of 9V battery
+-Relay NO (Normally Open) → Positive terminal of the DC fan
+-Fan negative terminal → Negative terminal of 9V battery
+
+🔹 Power Supply
+-ESP32 is powered using a USB cable from the laptop.
+-The fan is powered using a 9V battery, isolated from the ESP32 through the relay.
+
+⚙️ Working of the Circuit
+
+-When a voice command is given through the mobile phone, the ESP32 receives the command via Bluetooth.
+-The ESP32 activates the relay by setting GPIO 23 LOW.
+-The relay completes the circuit, allowing power to flow to the fan.
+-When the OFF command is given, the relay opens the circuit and the fan stops.
+
